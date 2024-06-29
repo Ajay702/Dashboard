@@ -9,6 +9,10 @@ const cors = require('cors');
 
 connectDb()
 
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' https://dashboard-server-iota.vercel.app; script-src 'self' 'unsafe-inline'");
+  next();
+});
 app.use(cors());
 app.get('/api/data', async (req, res) => {
     const data = await DataModel.find();
