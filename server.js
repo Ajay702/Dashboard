@@ -11,7 +11,7 @@ connectDb()
 
 app.use(cors());
 app.get('/', async (req, res) => {
-    const data = await DataModel.find();
+    const data = await DataModel.find({country: 'India'});
     res.json(data);
 });
 
