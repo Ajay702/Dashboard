@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(cors());
-app.get('/api/data', async (req, res) => {
+app.get('/', async (req, res) => {
     const data = await DataModel.find();
     res.json(data);
 });
