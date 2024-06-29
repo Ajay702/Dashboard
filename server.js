@@ -14,13 +14,6 @@ connectDb();
 
 
 app.get('/', async (req, res) => {
-    // try {
-    //     const data = await DataModel.find();
-    //     res.json(data);
-    // } catch (err) {
-    //     console.error("Error fetching data:", err);
-    //     res.status(500).json({ error: "Internal Server Error" });
-    // }
     console.log("HI");
 });
 
