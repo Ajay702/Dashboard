@@ -14,7 +14,7 @@ connectDb();
 
 
 app.get('/', async (req, res) => {
-    console.log("HI");
+    res.json({"message":"successful"})
 });
 
 
