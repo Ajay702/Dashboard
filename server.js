@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors'); 
 
-
 connectDb()
 
 app.use(cors());
