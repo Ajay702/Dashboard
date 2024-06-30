@@ -11,8 +11,7 @@ connectDb()
 
 app.use(cors());
 app.get('/', async (req, res) => {
-  const limit = 1; 
-  const data = await DataModel.find().limit(limit);
+  const data = await DataModel.find();
   res.json(data);
 });
 
