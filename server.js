@@ -1,17 +1,17 @@
+// server.js
+
 require('dotenv').config();
 const express = require('express');
 const connectDb = require("./config/dbConnection");
 const DataModel = require("./models/DataModel");
-const mongoose = require('mongoose');
+
 const app = express();
-const cors = require('cors'); 
 
-
+// Connect to MongoDB
 connectDb();
 
-
-app.use(cors());
-
+// Define CORS headers (not necessary on Vercel for API routes)
+// app.use(cors());
 
 const getData = async (req, res) => {
     try {
@@ -23,10 +23,8 @@ const getData = async (req, res) => {
     }
 };
 
+// Define API route handler
 app.get('/', getData);
 
-// Set up server to listen on specified port
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+// Set up serverless function for Vercel deployment
+module.exports = app;
